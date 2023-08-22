@@ -1,0 +1,35 @@
+ublic class NumerosPrimosYDivisores {
+    // Función para verificar si un número es primo
+    public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false; // 0 y 1 no son primos
+        }
+        if (numero <= 3) {
+            return true; // 2 y 3 son primos
+        }
+        if (numero % 2 == 0 || numero % 3 == 0) {
+            return false; // Los múltiplos de 2 y 3 no son primos
+        }
+        for (int i = 5; i * i <= numero; i += 6) {
+            if (numero % i == 0 || numero % (i + 2) == 0) {
+                return false; // Si es divisible por algún número en este rango, no es primo
+            }
+        }
+        return true; // Si no fue divisible por ningún número, es primo
+    }
+    public static void main(String[] args) {
+        for (int numero = 50; numero <= 100; numero++) {
+            if (esPrimo(numero)) {
+                System.out.println(numero + " es un número primo.");
+            } else {
+                System.out.print(numero + " no es un número primo. Sus divisores son: ");
+                for (int i = 1; i <= numero; i++) {
+                    if (numero % i == 0) {
+                        System.out.print(i + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+    }
+}
