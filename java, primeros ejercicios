@@ -1,0 +1,18 @@
+package hola.java;
+public class Program {
+	public static void main(String[] args) {
+		int numero;
+	    Scanner scanner= new Scanner(System.in);
+	    System.out.println("ingrese un numero: "+ numero);
+	    int numero=scanner.nextInt();
+	    if(numero % 2==0)
+	    {
+	        System.out.println(numero+" El numero que ingreso es par");
+	    }
+	    else
+	    {
+	        System.out.println(numero +" El numero que ingreso es impar");
+	    }
+	    scanner.close();
+	}
+}
